@@ -327,6 +327,7 @@ function isRootComponent(component) {
  * @param {(Component) => void} visitor
  */
 function visitNonCompositeChildren(component, visitor) {
+	if (!component) return;
 	if (component._renderedComponent) {
 		if (!component._renderedComponent._component) {
 			visitor(component._renderedComponent);
